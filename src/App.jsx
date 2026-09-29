@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import './App.css';
-import Home from './components/Home';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 import Tasks from './components/Tasks';
 import Login from './components/Login';
-import NotFound from './components/NotFound';
 import NavBar from './components/NavBar';
 import { getToken, getUser, clearToken } from './api';
 
