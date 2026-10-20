@@ -1,3 +1,5 @@
+[![CI](https://github.com/drashti8175/Portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/drashti8175/Portfolio/actions)
+
 # Drashti Patel – Portfolio
 
 A modern showcase of my work, built with HTML, CSS, and JavaScript (Vite).  
