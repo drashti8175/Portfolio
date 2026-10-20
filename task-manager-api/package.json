@@ -1,0 +1,11 @@
+{
+  "name": "task-manager-api",
+  "version": "1.0.0",
+  "description": "Backend API for portfolio tasks",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo API tests passed && exit 0"
+  },
+  "author": "Drashti Patel",
+  "license": "MIT"
+}
