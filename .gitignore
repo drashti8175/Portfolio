@@ -1,0 +1,12 @@
+node_modules/
+.kilocode/
+.vscode/
+.DS_Store
+.idea/
+*.log
+*.tmp
+*.bak
+*.swp
+AppData/
+.local/
+student-portfolio/
