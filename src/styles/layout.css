@@ -1,0 +1,100 @@
+/* Shell: sidebar + main content for inner pages */
+.shell { display: flex; min-height: 100vh; }
+
+.shell-main {
+  margin-left: 220px;
+  flex: 1;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* Sidebar Nav */
+.sidebar-nav {
+  position: fixed;
+  top: 0; left: 0;
+  width: 220px;
+  height: 100vh;
+  background: var(--card);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 32px 20px;
+  z-index: 200;
+}
+
+.sidebar-nav .nav-logo {
+  font-family: var(--head);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 40px;
+  letter-spacing: -0.3px;
+}
+
+.sidebar-nav .nav-links { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+
+.sidebar-nav .nav-links a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--ink3);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.sidebar-nav .nav-links a:hover { color: var(--ink); background: var(--bg2); }
+.sidebar-nav .nav-links .active-link {
+  color: var(--indigo);
+  background: rgba(79,70,229,0.07);
+  border-left: 3px solid var(--indigo);
+  font-weight: 600;
+}
+
+/* Inner page wrapper */
+.page { padding: 50px 48px; min-height: 100vh; }
+
+.page h2 {
+  font-family: var(--head);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: var(--ink);
+}
+.page h2 span { color: var(--gold); font-style: italic; }
+
+/* Nav user section */
+.nav-user-section {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.nav-user-info { display: flex; align-items: center; gap: 10px; }
+.nav-user-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.8rem; color: var(--bg);
+  flex-shrink: 0;
+}
+.nav-user-name {
+  font-size: 0.85rem; font-weight: 600; color: var(--ink);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.nav-logout-btn {
+  padding: 8px 14px; border-radius: 8px;
+  background: rgba(225,29,72,0.06);
+  border: 1px solid rgba(225,29,72,0.2);
+  color: var(--rose);
+  font-weight: 600; font-size: 0.82rem;
+  cursor: pointer; font-family: var(--font);
+  transition: all 0.2s; text-align: center;
+}
+.nav-logout-btn:hover { background: var(--rose); color: #fff; border-color: var(--rose); }
+
+@media (max-width: 768px) {
+  .sidebar-nav { display: none; }
+  .shell-main { margin-left: 0; }
+  .page { padding: 30px 20px; }
+}

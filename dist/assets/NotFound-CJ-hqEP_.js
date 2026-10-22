@@ -1,0 +1,1 @@
+import{d as e,f as t}from"./index-QoTk-Ia5.js";var n=e();function r(){return(0,n.jsxs)(`div`,{className:`page not-found`,children:[(0,n.jsx)(`h2`,{children:`404`}),(0,n.jsx)(`p`,{children:`Page not found`}),(0,n.jsx)(t,{to:`/`,className:`btn btn-primary`,children:`Go Home`})]})}export{r as default};
