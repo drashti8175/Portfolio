@@ -1,15 +1,22 @@
-name: CI Pipeline
+name: CI + Deploy Pipeline
 
 on:
   push:
     branches: [main]
 
+# Allow GitHub Actions to deploy to Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
+  # ── Job 1: Run API tests ──────────────────────────────────────────────────
   build-and-test:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./task-manager-api   # <‑‑ runs inside the API sub‑folder
+        working-directory: ./task-manager-api
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,3 +31,26 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+  # ── Job 2: Deploy portfolio to GitHub Pages ───────────────────────────────
+  deploy:
+    needs: build-and-test          # only deploy if tests pass
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload portfolio as Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'                # uploads repo root (index.html, style.css, app.js)
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
