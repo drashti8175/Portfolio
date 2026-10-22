@@ -10,3 +10,4 @@ node_modules/
 AppData/
 .local/
 student-portfolio/
+*.env
